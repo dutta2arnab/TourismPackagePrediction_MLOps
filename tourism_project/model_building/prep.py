@@ -17,6 +17,14 @@ tourism_dataset = pd.read_csv(DATASET_PATH)
 
 print("Dataset loaded successfully.")
 
+TARGET = "ProdTaken"
+unique_id = "CustomerID"
+
+# Remove the target and unique id  from numerical columns
+num_cols_no_target = [col for col in num_cols if col not in (TARGET,unique_id)]
+
+print("Numerical columns (without target and unique id):", num_cols_no_target)
+
 
 # Define the target variable for the classification task
 target = TARGET
