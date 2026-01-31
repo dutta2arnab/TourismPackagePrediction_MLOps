@@ -1,3 +1,4 @@
+
 # for data manipulation
 import pandas as pd
 from sklearn.preprocessing import StandardScaler, OneHotEncoder
@@ -14,6 +15,8 @@ import os
 # for hugging face space authentication to upload files
 from huggingface_hub import login, HfApi, create_repo
 from huggingface_hub.utils import RepositoryNotFoundError, HfHubHTTPError
+
+import mlflow
 
 mlflow.set_tracking_uri("http://localhost:5000") 
 #mlflow.set_tracking_uri(public_url)
@@ -139,4 +142,3 @@ with mlflow.start_run():
         repo_id=repo_id,
         repo_type=repo_type,
     )
-
