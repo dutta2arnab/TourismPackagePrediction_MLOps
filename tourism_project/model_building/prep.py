@@ -1,5 +1,6 @@
 # for data manipulation
 import pandas as pd
+import numpy as np
 import sklearn
 # for creating a folder
 import os
@@ -19,6 +20,14 @@ print("Dataset loaded successfully.")
 
 TARGET = "ProdTaken"
 unique_id = "CustomerID"
+
+
+# Identify the Numerical and Categorical Columns
+cat_cols = df.select_dtypes(include=['object']).columns.tolist()
+num_cols = df.select_dtypes(include=[np.number]).columns.tolist()
+
+print("Categorical columns:", cat_cols)
+print("Numerical columns:", num_cols)
 
 # Remove the target and unique id  from numerical columns
 num_cols_no_target = [col for col in num_cols if col not in (TARGET,unique_id)]
