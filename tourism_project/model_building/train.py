@@ -37,8 +37,8 @@ ytest = pd.read_csv(ytest_path,storage_options={"token": os.getenv("HF_TOKEN")})
 
 # List of numerical and categorical features in the dataset
 
-numeric_features = num_cols_no_target
-categorical_features = cat_cols
+numeric_features = ['Age', 'CityTier', 'DurationOfPitch', 'NumberOfPersonVisiting', 'NumberOfFollowups', 'PreferredPropertyStar', 'NumberOfTrips', 'Passport', 'PitchSatisfactionScore', 'OwnCar', 'NumberOfChildrenVisiting', 'MonthlyIncome']
+categorical_features = ['TypeofContact', 'Occupation', 'Gender', 'ProductPitched', 'MaritalStatus', 'Designation']
 
 # Set the clas weight to handle class imbalance
 class_weight = ytrain.value_counts()[0] / ytrain.value_counts()[1]
