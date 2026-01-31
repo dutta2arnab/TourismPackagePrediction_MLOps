@@ -23,8 +23,8 @@ unique_id = "CustomerID"
 
 
 # Identify the Numerical and Categorical Columns
-cat_cols = df.select_dtypes(include=['object']).columns.tolist()
-num_cols = df.select_dtypes(include=[np.number]).columns.tolist()
+cat_cols = tourism_dataset.select_dtypes(include=['object']).columns.tolist()
+num_cols = tourism_dataset.select_dtypes(include=[np.number]).columns.tolist()
 
 print("Categorical columns:", cat_cols)
 print("Numerical columns:", num_cols)
